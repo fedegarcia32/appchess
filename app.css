@@ -1,0 +1,42 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#262421;color:#eee;font-family:-apple-system,system-ui,Segoe UI,Roboto,sans-serif;padding:env(safe-area-inset-top) 8px env(safe-area-inset-bottom)}
+header{display:flex;justify-content:space-between;align-items:center;padding:6px 2px}
+h1{font-size:20px;margin:0}#status{font-size:13px;color:#bbb}
+main{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+#boardwrap{display:flex;gap:6px;width:min(96vw,560px)}
+#evalbar{position:relative;width:22px;flex:none;background:#333;border-radius:3px;overflow:hidden}
+#evalbar.hide{visibility:hidden}
+#evalfill{position:absolute;bottom:0;left:0;right:0;height:50%;background:#f0f0f0;transition:height .6s ease}
+#evaltext{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);font-size:10px;text-align:center;color:#888;mix-blend-mode:difference;font-weight:700}
+#boardbox{position:relative;flex:1;aspect-ratio:1}
+#board{display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);width:100%;height:100%;border-radius:3px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+.sq{position:relative;display:flex;align-items:center;justify-content:center}
+.l{background:#eeeed2}.d{background:#769656}
+.sq.last{box-shadow:inset 0 0 0 100vmax rgba(255,255,0,.35)}
+.sq.sel{box-shadow:inset 0 0 0 100vmax rgba(20,85,30,.5)}
+.sq.check{background:radial-gradient(#f33 10%,transparent 75%)}
+.sq.hint::after{content:"";width:28%;height:28%;border-radius:50%;background:rgba(0,0,0,.22)}
+.sq.hintcap::after{content:"";position:absolute;inset:4%;border-radius:50%;border:5px solid rgba(0,0,0,.22)}
+.coord{position:absolute;font-size:10px;font-weight:700;opacity:.7}.coord.f{right:2px;bottom:1px}.coord.r{left:2px;top:1px}
+.l .coord{color:#769656}.d .coord{color:#eeeed2}
+.pc{font-size:min(10.5vw,62px);line-height:1;font-family:"Apple Symbols","Segoe UI Symbol","DejaVu Sans",serif;cursor:grab;pointer-events:none}
+.pc.w{color:#fff;-webkit-text-stroke:1.5px #222;text-shadow:0 1px 1px rgba(0,0,0,.4)}
+.pc.b{color:#111;text-shadow:0 1px 0 rgba(255,255,255,.2)}
+.drag{position:fixed;pointer-events:none;z-index:50;transform:translate(-50%,-60%) scale(1.15)}
+#arrows{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#panel{width:min(96vw,420px)}
+.row{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+button,select{font-size:15px;padding:9px 11px;border-radius:7px;border:0;background:#3c3a37;color:#eee}
+button.primary{background:#81b64c;color:#fff;font-weight:700}
+button:active{filter:brightness(1.3)}
+label{font-size:13px;color:#ccc;display:flex;flex-direction:column;gap:2px}
+label.chk{flex-direction:row;align-items:center;gap:6px}
+#info{font-size:13px;color:#ccc;min-height:18px}
+#moves{max-height:180px;overflow:auto;background:#1e1d1b;border-radius:6px;padding:6px 6px 6px 34px;margin:6px 0;font-family:ui-monospace,Menlo,monospace;font-size:14px;columns:2}
+#moves li span{display:inline-block;min-width:60px}
+textarea{width:100%;height:120px;background:#1e1d1b;color:#eee;border-radius:6px}
+#promo{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:60}
+#promo[hidden]{display:none}
+.promobox{background:#3c3a37;padding:14px;border-radius:10px;text-align:center}
+#promochoices button{font-size:40px;margin:4px;width:64px;height:64px;background:#eeeed2;color:#111}
+footer{text-align:center;font-size:11px;color:#888;margin:10px 0}

@@ -1,0 +1,19 @@
+{
+ "name": "App Chess",
+ "short_name": "App Chess",
+ "lang": "es-UY",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#262421",
+ "theme_color": "#262421",
+ "icons": [
+  {
+   "src": "icons/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}

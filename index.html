@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="App Chess">
+<meta name="theme-color" content="#262421">
+<title>App Chess</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header><h1>♞ App Chess</h1><span id="status">Cargando motor…</span></header>
+<main>
+  <div id="boardwrap">
+    <div id="evalbar"><div id="evalfill"></div><span id="evaltext">0.0</span></div>
+    <div id="boardbox"><div id="board"></div><svg id="arrows" viewBox="0 0 800 800"></svg></div>
+  </div>
+  <section id="panel">
+    <div class="row">
+      <button id="btnNew">Nueva partida</button>
+      <button id="btnUndo">Deshacer</button>
+      <button id="btnBest" class="primary">Mejor jugada</button>
+      <button id="btnFlip">Girar</button>
+    </div>
+    <div class="row">
+      <label>Modo <select id="mode"><option value="play">Jugar vs Stockfish</option><option value="analysis">Análisis (libre)</option></select></label>
+      <label>Tu color <select id="color"><option value="w">Blancas</option><option value="b">Negras</option></select></label>
+    </div>
+    <div class="row">
+      <label>Nivel <select id="skill"></select></label>
+      <label>Tiempo / profundidad <select id="limit">
+        <option value="movetime 500">0,5 s</option><option value="movetime 1000">1 s</option>
+        <option value="movetime 2000" selected>2 s</option><option value="movetime 5000">5 s</option>
+        <option value="movetime 10000">10 s</option><option value="depth 12">Profundidad 12</option>
+        <option value="depth 18">Profundidad 18</option><option value="depth 22">Profundidad 22</option>
+      </select></label>
+    </div>
+    <div class="row"><label class="chk"><input type="checkbox" id="showEval" checked> Mostrar barra de evaluación</label></div>
+    <div id="info"></div>
+    <ol id="moves"></ol>
+    <div class="row">
+      <button id="btnPgn">Exportar PGN</button>
+      <button id="btnCopy">Copiar PGN</button>
+    </div>
+    <textarea id="pgnout" readonly hidden></textarea>
+  </section>
+</main>
+<div id="promo" hidden><div class="promobox"><p>Coronar como:</p><div id="promochoices"></div></div></div>
+<footer>Motor: Stockfish 16 (GPLv3) · Juego local, sin conexión a otras apps</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
